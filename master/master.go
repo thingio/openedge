@@ -111,7 +111,7 @@ func defaults(c *Config) error {
 		if err != nil {
 			openedge.WithError(err).Errorf("failed to make dir: var/run")
 		}
-		c.Server = "unix://var/run/openedge.sock"
+		c.Server = "unix:///var/run/openedge.sock"
 		utils.SetEnv(openedge.MasterAPIKey, c.Server)
 	} else {
 		if c.Server == "" {
